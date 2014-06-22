@@ -19,7 +19,18 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('dashboard');
+		$this->load->view('user/templates/header');
+		$this->load->view('user/dashboard');
+	}
+
+	public function signup()
+	{
+		$this->load->view('signup');
+	}
+
+	public function signin()
+	{
+		$this->load->view('signin');
 	}
 }
 
