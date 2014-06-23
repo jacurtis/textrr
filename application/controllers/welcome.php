@@ -25,7 +25,40 @@ class Welcome extends CI_Controller {
 
 	public function signup()
 	{
-		$this->load->view('signup');
+		// load necessary helpers/ libraries
+		$this->load->library('form_validation');
+		$this->form_validation->set_error_delimiters('<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button><i class="fa fa-ban-circle"></i><strong>Error: </strong>', '</div>');
+
+		if (!empty($_POST['input-name'])) { // has the form been just submitted?
+			
+			// validate
+			$this->form_validation->set_rules('input-name', 'Name', 'trim|required');
+			$this->form_validation->set_rules('input-email', 'Email', 'trim|required|valid_email');
+			$this->form_validation->set_rules('input-password', 'Password', 'trim|required|min_length[6]|max_length[20]|sha1');
+
+			if ($this->form_validation->run() == TRUE) {
+			
+				// verify submitted information
+				$tempName = $this->input->post('input-name');
+				$fullname = explode(' ', $tempName, 2);
+				$firstName = $fullname[0];
+				$lastName = $fullname[1];
+
+				$emailAddress = $this->input->post('input-email');
+				$password = $this->input->post('input-password');
+				// submit it to the database
+				$this->load->model('User_model', '', TRUE);
+				$this->User_model->addNewUser($firstName, $lastName, $emailAddress, $password);
+
+				// if successful, we want to load the new dashboard with the new user's information
+				$this->load->view('user/templates/header');
+				$this->load->view('user/dashboard');
+			} else { // now if the form didnt validation, redisplay errors
+				$this->load->view('signup');
+			}
+		} else { // no the form is not freshly submitted
+			$this->load->view('signup');
+		}
 	}
 
 	public function signin()
