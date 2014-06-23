@@ -40,7 +40,7 @@
             </div>
             <div class="checkbox">
               <label>
-                <input type="checkbox" id="terms-service"> Agree the <a href="#">terms and conditions</a>
+                <input type="checkbox" name="terms-service" id="terms-service"> Agree the <a href="#">terms and conditions</a>
               </label>
             </div>
             <button type="submit" class="btn btn-primary">Sign up</button>
