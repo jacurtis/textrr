@@ -39,7 +39,7 @@
 */
 
 $route['default_controller'] = "welcome";
-$route['dashboard'] = "welcome";
+$route['dashboard'] = "app";
 $route['signin'] = "welcome/signin";
 $route['signup'] = "welcome/signup";
 $route['404_override'] = '';
