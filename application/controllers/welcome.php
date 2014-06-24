@@ -33,7 +33,7 @@ class Welcome extends CI_Controller {
 			// validate
 			$this->form_validation->set_rules('input-name', 'Name', 'trim|required');
 			$this->form_validation->set_rules('input-email', 'Email', 'trim|required|valid_email');
-			$this->form_validation->set_rules('input-password', 'Password', 'trim|required|min_length[6]|max_length[20]|sha1');
+			$this->form_validation->set_rules('input-password', 'Password', 'trim|required|min_length[6]|max_length[20]');
 
 			if ($this->form_validation->run() == TRUE && $this->input->post('terms-service') == TRUE) {
 			
@@ -46,11 +46,13 @@ class Welcome extends CI_Controller {
 				$emailAddress = $this->input->post('input-email');
 				$password = $this->input->post('input-password');
 				// submit it to the database
-				$this->load->model('User_model', '', TRUE);
-				$this->User_model->addNewUser($firstName, $lastName, $emailAddress, $password);
-
-				// if successful, we want to load the new dashboard with the new user's information
-				redirect('/dashboard', 'location', 301);
+				if ($this->authex->register($firstName, $lastName, $emailAddress, $password)) {
+					// if successful, we want to load the new dashboard with the new user's information
+					redirect('/dashboard', 'location', 301);
+				} else {
+					$this->load->view('signup');
+				}
+				
 			} else { // now if the form didnt validation, redisplay errors
 				$this->load->view('signup');
 			}
@@ -61,7 +63,22 @@ class Welcome extends CI_Controller {
 
 	public function signin()
 	{
-		$this->load->view('signin');
+		if (!empty($_POST['input-email']) && !empty($_POST['input-password'])) {
+			if($this->authex->login($this->input->post('input-email'), $this->input->post('input-password'))) {
+				$this->load->view('user/templates/header');
+				$this->load->view('user/dashboard');
+			} else {
+				$this->load->view('signin');
+			}
+		} else {
+			$this->load->view('signin');
+		}
+	}
+
+	public function logout()
+	{
+		$this->authex->logout();
+		$this->load->view('landing');
 	}
 }
 

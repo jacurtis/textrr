@@ -19,19 +19,19 @@
 <body class="">
   <section id="content" class="m-t-lg wrapper-md animated fadeInUp">    
     <div class="container aside-xxl">
-      <a class="navbar-brand block" href="index.html">Textrr</a>
+      <a class="navbar-brand block" href="/">Textrr</a>
       <section class="panel panel-default bg-white m-t-lg">
         <header class="panel-heading text-center">
           <strong>Sign in</strong>
         </header>
-        <form action="index.html" class="panel-body wrapper-lg">
+        <form action="/login" method="POST" class="panel-body wrapper-lg">
           <div class="form-group">
-            <label class="control-label">Email</label>
-            <input type="email" placeholder="test@example.com" class="form-control input-lg">
+            <label class="control-label" for="input-email">Email</label>
+            <input type="email" placeholder="test@example.com" class="form-control input-lg" name="input-email" id="input-email">
           </div>
           <div class="form-group">
-            <label class="control-label">Password</label>
-            <input type="password" id="inputPassword" placeholder="Password" class="form-control input-lg">
+            <label class="control-label" for="input-password">Password</label>
+            <input type="password" name="input-password" id="input-password" placeholder="Password" class="form-control input-lg">
           </div>
           <div class="checkbox">
             <label>
@@ -41,9 +41,9 @@
           <a href="#" class="pull-right m-t-xs"><small>Forgot password?</small></a>
           <button type="submit" class="btn btn-primary">Sign in</button>
           <div class="line line-dashed"></div>
-          <a href="#" class="btn btn-facebook btn-block m-b-sm"><i class="fa fa-facebook pull-left"></i>Sign in with Facebook</a>
+          <!-- <a href="#" class="btn btn-facebook btn-block m-b-sm"><i class="fa fa-facebook pull-left"></i>Sign in with Facebook</a>
           <a href="#" class="btn btn-twitter btn-block"><i class="fa fa-twitter pull-left"></i>Sign in with Twitter</a>
-          <div class="line line-dashed"></div>
+          <div class="line line-dashed"></div> -->
           <p class="text-muted text-center"><small>Do not have an account?</small></p>
           <a href="signup.html" class="btn btn-default btn-block">Create an account</a>
         </form>
