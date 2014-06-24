@@ -40,10 +40,10 @@
 
 $route['default_controller'] = "welcome";
 $route['dashboard'] = "app";
-$route['login'] = "welcome/signin";
-$route['signin'] = "welcome/signin";
-$route['logout'] = "welcome/logout";
-$route['signup'] = "welcome/signup";
+$route['login'] = "user/signin";
+$route['signin'] = "user/signin";
+$route['logout'] = "user/logout";
+$route['signup'] = "user/signup";
 $route['404_override'] = '';
 
 

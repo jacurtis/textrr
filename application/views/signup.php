@@ -19,7 +19,7 @@
   <body class="">
     <section id="content" class="m-t-lg wrapper-md animated fadeInDown">
       <div class="container aside-xxl">
-        <a class="navbar-brand block" href="index.html">Textrr</a>
+        <a class="navbar-brand block" href="/">Textrr</a>
         <section class="panel panel-default m-t-lg bg-white">
           <header class="panel-heading text-center">
             <strong>Sign up</strong>
@@ -35,7 +35,7 @@
               <input type="email" name="input-email" id="input-email" placeholder="test@example.com" class="form-control input-lg" value="<?php echo set_value('input-email'); ?>">
             </div>
             <div class="form-group">
-              <label class="control-label" name="input-password">Password</label>
+              <label class="control-label" for="input-password">Password</label>
               <input type="password" name="input-password" id="input-password" placeholder="Type a password" class="form-control input-lg">
             </div>
             <div class="checkbox">

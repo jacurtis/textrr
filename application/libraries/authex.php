@@ -21,8 +21,8 @@ class Authex {
 	    }
 	    else
 	    {
-	         $query = $CI->db->get_where("users", array("ID" => $CI->session->userdata("user_id")));
-	         return $query->row();
+	        $query = $CI->db->get_where("users", array("ID" => $CI->session->userdata("user_id")));
+	        return $query->row();
 	    }
 	}
 

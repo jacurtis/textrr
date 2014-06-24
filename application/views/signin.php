@@ -45,7 +45,7 @@
           <a href="#" class="btn btn-twitter btn-block"><i class="fa fa-twitter pull-left"></i>Sign in with Twitter</a>
           <div class="line line-dashed"></div> -->
           <p class="text-muted text-center"><small>Do not have an account?</small></p>
-          <a href="signup.html" class="btn btn-default btn-block">Create an account</a>
+          <a href="/signup" class="btn btn-default btn-block">Create an account</a>
         </form>
       </section>
     </div>
