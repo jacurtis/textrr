@@ -43,7 +43,7 @@
             <a href="/blog">Blog</a>
           </li>
           <li>
-            <div class="m-t-sm"><a href="/signin" class="btn btn-link btn-sm">Sign in</a> <a href="signup.html" class="btn btn-sm btn-success m-l"><strong>Sign up</strong></a></div>
+            <div class="m-t-sm"><a href="/login" class="btn btn-link btn-sm">Sign in</a> <a href="/signup" class="btn btn-sm btn-success m-l"><strong>Sign up</strong></a></div>
           </li>
         </ul>
       </div>

@@ -187,7 +187,7 @@
                 <nav class="nav-primary hidden-xs">
                   <ul class="nav">
                     <li  class="active">
-                      <a href="index.html"   class="active">
+                      <a href="/"   class="active">
                         <i class="fa fa-dashboard icon">
                           <b class="bg-danger"></b>
                         </i>

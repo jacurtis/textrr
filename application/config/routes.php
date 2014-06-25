@@ -43,6 +43,7 @@ $route['login'] = "user/signin";
 $route['signin'] = "user/signin";
 $route['logout'] = "user/logout";
 $route['signup'] = "user/signup";
+$route['lists'] = "app/lists";
 $route['404_override'] = 'error/my404';
 $route['default_controller'] = "welcome";
 

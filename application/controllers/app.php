@@ -18,7 +18,8 @@ class App extends CI_Controller {
 
 	public function lists()
 	{
-		
+		$this->load->view('user/templates/header');
+		$this->load->view('user/lists');
 	}
 
 	public function analytics()
