@@ -10,13 +10,26 @@
 	margin-top: 20px;
 }
 
+.green-title, .green-title a {
+	color: #89cc97;
+}
+
+.green-title a:hover {
+	color: #8ec165;
+}
+
 .list-item .btn-group {
 	margin-top: 10px;
 }
 
 .list-item .number-label {
 	margin-top: 10px;
-	margin-left: 1px;
+	margin-right: 0px;
+}
+
+.more-dropdown-menu {
+	left: inherit;
+	right: 0 !important;
 }
 
 
@@ -66,10 +79,12 @@
 	}
 	
 	.more-btn-top {
-		margin-left: 65%;
+		float: left;
+		margin-right: 110px;
 	}
 
 	.more-btn {
+		float: left;
 		border: 0px;
 		background-color: none;
 		padding: 0px;
@@ -77,8 +92,6 @@
 	}
 
 	.more-dropdown-menu {
-		left: inherit;
-		right: 0 !important;
 		top: -150%;
 	}
 }

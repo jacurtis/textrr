@@ -20,28 +20,30 @@
                 The rows of lists -->
                 <div class="row list-item">
                   <div class="col-md-6">
-                    <h3>List Name</h3>
+                    <h3 class="green-title"><a href="#">List Name</a></h3>
                     <p class="hidden-xs hidden-sm">Created on Dec 12, 2014</p>
                   </div>
                   <div class="col-md-3 col-xs-6">
                     <h3 class="subscriber-number"><strong>83</strong></h3>
                     <p class="hidden-xs hidden-sm">Subscribers</p>
-                    <p class="number-label visible-xs visible-sm"><span class="label bg-info">(801) 369-0041</span></p>
+                    <p class="number-label visible-xs visible-sm"><span class="label bg-success">(801) 369-0041</span></p>
                   </div>
                   <div class="col-md-3 col-xs-6">
-                    <div class="btn-group more-btn-top">
-                      <button class="btn btn-default dropdown-toggle more-btn" data-toggle="dropdown">
-                        Actions <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu more-dropdown-menu">
-                        <li><a href="#">View Full List</a></li>
-                        <li><a href="#">Add New Number</a></li>
-                        <li><a href="#">Create Campaign</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Delete this list</a></li>
-                      </ul>
+                    <div class="pull-right">
+                      <div class="btn-group more-btn-top">
+                        <button class="btn btn-default dropdown-toggle more-btn" data-toggle="dropdown">
+                          Actions <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu more-dropdown-menu">
+                          <li><a href="#">View Full List</a></li>
+                          <li><a href="#">Add New Number</a></li>
+                          <li><a href="#">Create Campaign</a></li>
+                          <li class="divider"></li>
+                          <li><a href="#">Delete this list</a></li>
+                        </ul>
+                      </div>
+                      <p class="number-label hidden-xs hidden-sm"><span class="label bg-success">(801) 369-0041</span></p>
                     </div>
-                    <p class="number-label hidden-xs hidden-sm"><span class="label bg-info">(801) 369-0041</span></p>
                   </div>
                 </div>
                 <div class="row">
