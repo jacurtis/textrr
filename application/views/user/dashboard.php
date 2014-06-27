@@ -3,7 +3,7 @@
           <section class="vbox">          
             <section class="scrollable">
               <div class="wrapper-lg">
-                <h3 class="m-b-xs font-bold m-t-none">Welcome back, John</h3>
+                <h3 class="m-b-xs font-bold m-t-none">Welcome back, <?= $first_name ?></h3>
                 <div class="text-muted text-sm"><a href="#" class="text-primary font-bold">25</a> Tasks, <a href="#" class="text-primary font-bold">50</a> Messages</div>
               </div>
               <ul class="nav nav-tabs">                
