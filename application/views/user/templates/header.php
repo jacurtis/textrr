@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="<?=js_url('calendar/bootstrap_calendar.css')?>" type="text/css" />
   <link rel="stylesheet" href="<?=js_url('jvectormap/jquery-jvectormap-1.2.2.css')?>" type="text/css" />
   <link rel="stylesheet" href="<?=css_url('app.css')?>" type="text/css" />
+  <link rel="stylesheet" href="<?=css_url('custom.css')?>" type="text/css" />
   <!--[if lt IE 9]>
     <script src="<?=js_url('ie/html5shiv.js')?>"></script>
     <script src="<?=js_url('ie/respond.min.js')?>""></script>
