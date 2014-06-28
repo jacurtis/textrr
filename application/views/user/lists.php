@@ -29,7 +29,7 @@
                   <div class="col-md-3 col-xs-6">
                     <h3 class="subscriber-number"><strong><?= $list['list_count'] ?></strong></h3>
                     <p class="hidden-xs hidden-sm">Subscribers</p>
-                    <p class="number-label visible-xs visible-sm"><span class="label bg-success">(801) 369-0041</span></p>
+                    <p class="number-label visible-xs visible-sm"><span class="label bg-success"><?= friendlyUSAFormat($list['list_phonenumber']) ?></span></p>
                   </div>
                   <div class="col-md-3 col-xs-6">
                     <div class="pull-right">
@@ -45,7 +45,7 @@
                           <li><a href="#">Delete this list</a></li>
                         </ul>
                       </div>
-                      <p class="number-label hidden-xs hidden-sm"><span class="label bg-success">(801) 369-0041</span></p>
+                      <p class="number-label hidden-xs hidden-sm"><span class="label bg-success"><?= friendlyUSAFormat($list['list_phonenumber']) ?></span></p>
                     </div>
                   </div>
                 </div>

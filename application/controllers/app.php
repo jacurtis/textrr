@@ -5,7 +5,7 @@ class App extends CI_Controller {
 	public function __construct() 
     {
         parent::__construct();
-        //private $userid;
+        $this->load->helper('phonenumber_helper');
         if ($this->authex->logged_in() == FALSE) {
         	redirect('/');
         } else {
