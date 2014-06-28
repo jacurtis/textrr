@@ -1,13 +1,15 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class App extends CI_Controller {
-
+class App extends CI_Controller {	
+	private $userid;
 	public function __construct() 
     {
         parent::__construct();
-
-        if ($this->authex->logged_in() != TRUE) {
+        //private $userid;
+        if ($this->authex->logged_in() == FALSE) {
         	redirect('/');
+        } else {
+			$this->userid = $this->session->userdata("user_id");
         }
     }
 
@@ -15,7 +17,7 @@ class App extends CI_Controller {
 	{
 		// retrieve data from db
 		$this->load->model('user_model');
-		$userdata = $this->user_model->getUserData($this->session->userdata("user_id"));
+		$userdata = $this->user_model->getUserData($this->userid);
 		$title = 'Textrr Dashboard, Welcome '.$userdata['first_name'];
 
 		$data = array(
@@ -35,8 +37,13 @@ class App extends CI_Controller {
 
 	public function lists()
 	{
+		$this->load->model('list_model');
+		$listdata = $this->list_model->getAllLists($this->userid);
+
+		$data = array('lists' => $listdata);
+
 		$this->load->view('user/templates/header');
-		$this->load->view('user/lists');
+		$this->load->view('user/lists', $data);
 	}
 
 	public function analytics()

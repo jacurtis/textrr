@@ -4,7 +4,7 @@
             <section class="scrollable">
               <div class="wrapper-lg">
                 <h3 class="m-b-xs font-bold m-t-none">Welcome back, <?= $first_name ?></h3>
-                <div class="text-muted text-sm"><a href="#" class="text-primary font-bold">25</a> Tasks, <a href="#" class="text-primary font-bold">50</a> Messages</div>
+                <div class="text-muted text-sm"><a href="#" class="text-primary font-bold">25</a> Lists, <a href="#" class="text-primary font-bold">50</a> Phone Numbers</div>
               </div>
               <ul class="nav nav-tabs">                
                 <li class="active m-l-lg"><a href="#sales" data-toggle="tab">Sales</a></li>

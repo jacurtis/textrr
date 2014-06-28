@@ -18,13 +18,16 @@
 
                 <!-- 
                 The rows of lists -->
+                <?php
+                  foreach ($lists as $list) {
+                ?>
                 <div class="row list-item">
                   <div class="col-md-6">
-                    <h3 class="green-title"><a href="#">List Name</a></h3>
+                    <h3 class="green-title"><a href="#"><?= $list['list_name'] ?></a></h3>
                     <p class="hidden-xs hidden-sm">Created on Dec 12, 2014</p>
                   </div>
                   <div class="col-md-3 col-xs-6">
-                    <h3 class="subscriber-number"><strong>83</strong></h3>
+                    <h3 class="subscriber-number"><strong><?= $list['list_count'] ?></strong></h3>
                     <p class="hidden-xs hidden-sm">Subscribers</p>
                     <p class="number-label visible-xs visible-sm"><span class="label bg-success">(801) 369-0041</span></p>
                   </div>
@@ -49,6 +52,7 @@
                 <div class="row">
                   <div class="col-xs-12"><hr></div>
                 </div>
+                <?php } ?>
 
               </div>
             </section>
