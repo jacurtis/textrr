@@ -34,19 +34,6 @@
 
 
 @media(max-width:767px){
-	.adjust-btn-top-flush {
-		float: left;
-		margin-top: 5px;
-	}
-
-	.subscriber-number strong {
-		font-size: 16px;
-	}
-
-	.subscriber-number:after {
-		content: "  subscribers";
-		font-size: 14px;
-	}
 	
 	.more-btn-top {
 		margin-left: 65%;
@@ -58,11 +45,12 @@
 		padding: 0px;
 		margin-top: 16px;
 	}
+
+	.top-area {
+		margin-left: 0;
+	}
 }
 
-@media(min-width:768px){
-
-}
 @media(max-width:992px){
 	.adjust-btn-top-flush {
 		float: left;
@@ -79,12 +67,10 @@
 	}
 	
 	.more-btn-top {
-		float: left;
 		margin-right: 110px;
 	}
 
 	.more-btn {
-		float: left;
 		border: 0px;
 		background-color: none;
 		padding: 0px;
@@ -95,4 +81,6 @@
 		top: -150%;
 	}
 }
+
+@media(min-width:768px){}
 @media(min-width:1200px){}

@@ -7,20 +7,32 @@ class List_model extends CI_Model {
 		$this->load->database();
 	}
 
-	function addNewUser($firstName, $lastName, $email, $password)
+	function getListData($listid)
+	{
+		$data = array('id' => $listid);
+		$query = $this->db->get_where('lists', $data);
+		return $query->row_array();
+	}
+
+	function addNewList($listname, $userid, $phone)
 	{
 		$data = array(
-			'first_name' => $firstName,
-			'last_name' => $lastName,
-			'email' => $email,
-			'password' => $password 
+				'users_id' 			=> $userid,
+				'list_name'			=>	$listname,
+				'list_phonenumber'	=>	$phone
 			);
-		$this->db->insert('users', $data);
+		$this->db->insert('lists', $data);
 	}
 
 	function getAllLists($userid) {
 		$data = array('users_id' => $userid);
 		$query = $this->db->get_where('lists', $data);
 		return $query->result_array();
+	}
+
+	function deleteList($listid)
+	{
+		$data = array('id' => $listid);
+		return $this->db->delete('lists', $data);
 	}
 }
