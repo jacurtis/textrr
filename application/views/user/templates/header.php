@@ -2,7 +2,7 @@
 <html lang="en" class="app">
 <head>
   <meta charset="utf-8" />
-  <title>Textrr | Web Application</title>
+  <title>Textrr | <?= $title ?></title>
   <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
   <link rel="stylesheet" href="<?=css_url('bootstrap.css')?>" type="text/css" />
@@ -187,15 +187,11 @@
                 <!-- nav -->
                 <nav class="nav-primary hidden-xs">
                   <ul class="nav">
-                    <li  class="active">
+                    <li <?= ($nav_item == "dashboard" ? 'class="active"' :'') ?> >
                       <a href="/"   class="active">
                         <i class="fa fa-dashboard icon">
                           <b class="bg-danger"></b>
                         </i>
-                        <span class="pull-right">
-                          <i class="fa fa-angle-down text"></i>
-                          <i class="fa fa-angle-up text-active"></i>
-                        </span>
                         <span>Dashboard</span>
                       </a>
                     </li>
@@ -243,135 +239,13 @@
                         </li>
                       </ul>
                     </li>
-                    <li >
-                      <a href="#uikit"  >
+                    <li <?= ($nav_item == "lists" ? 'class="active"' :'') ?> >
+                      <a href="/lists"  >
                         <i class="fa fa-flask icon">
                           <b class="bg-success"></b>
                         </i>
-                        <span class="pull-right">
-                          <i class="fa fa-angle-down text"></i>
-                          <i class="fa fa-angle-up text-active"></i>
-                        </span>
                         <span>Lists</span>
                       </a>
-                      <ul class="nav lt">
-                        <li >
-                          <a href="buttons.html" >                                                        
-                            <i class="fa fa-angle-right"></i>
-                            <span>Buttons</span>
-                          </a>
-                        </li>
-                        <li >
-                          <a href="icons.html" >                            
-                            <b class="badge bg-info pull-right">369</b>                                                        
-                            <i class="fa fa-angle-right"></i>
-                            <span>Icons</span>
-                          </a>
-                        </li>
-                        <li >
-                          <a href="grid.html" >                                                        
-                            <i class="fa fa-angle-right"></i>
-                            <span>Grid</span>
-                          </a>
-                        </li>
-                        <li >
-                          <a href="widgets.html" >                            
-                            <b class="badge  pull-right">8</b>                                                        
-                            <i class="fa fa-angle-right"></i>
-                            <span>Widgets</span>
-                          </a>
-                        </li>
-                        <li >
-                          <a href="components.html" >                                                        
-                            <i class="fa fa-angle-right"></i>
-                            <span>Components</span>
-                          </a>
-                        </li>
-                        <li >
-                          <a href="list.html" >                                                        
-                            <i class="fa fa-angle-right"></i>
-                            <span>List group</span>
-                          </a>
-                        </li>
-                        <li >
-                          <a href="#table" >                            
-                            <i class="fa fa-angle-down text"></i>
-                            <i class="fa fa-angle-up text-active"></i>
-                            <span>Table</span>
-                          </a>
-                          <ul class="nav bg">
-                            <li >
-                              <a href="table-static.html" >
-                                <i class="fa fa-angle-right"></i>
-                                <span>Table static</span>
-                              </a>
-                            </li>
-                            <li >
-                              <a href="table-datatable.html" >
-                                <i class="fa fa-angle-right"></i>
-                                <span>Datatable</span>
-                              </a>
-                            </li>
-                            <li >
-                              <a href="table-datagrid.html" >
-                                <i class="fa fa-angle-right"></i>
-                                <span>Datagrid</span>
-                              </a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li >
-                          <a href="#form" >                            
-                            <i class="fa fa-angle-down text"></i>
-                            <i class="fa fa-angle-up text-active"></i>
-                            <span>Form</span>
-                          </a>
-                          <ul class="nav bg">
-                            <li >
-                              <a href="form-elements.html" >
-                                <i class="fa fa-angle-right"></i>
-                                <span>Form elements</span>
-                              </a>
-                            </li>
-                            <li >
-                              <a href="form-validation.html" >
-                                <i class="fa fa-angle-right"></i>
-                                <span>Form validation</span>
-                              </a>
-                            </li>
-                            <li >
-                              <a href="form-wizard.html" >
-                                <i class="fa fa-angle-right"></i>
-                                <span>Form wizard</span>
-                              </a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li >
-                          <a href="chart.html" >                                                        
-                            <i class="fa fa-angle-right"></i>
-                            <span>Chart</span>
-                          </a>
-                        </li>
-                        <li >
-                          <a href="fullcalendar.html" >                                                        
-                            <i class="fa fa-angle-right"></i>
-                            <span>Fullcalendar</span>
-                          </a>
-                        </li>
-                        <li >
-                          <a href="portlet.html" >                                                        
-                            <i class="fa fa-angle-right"></i>
-                            <span>Portlet</span>
-                          </a>
-                        </li>
-                        <li >
-                          <a href="timeline.html" >                                                        
-                            <i class="fa fa-angle-right"></i>
-                            <span>Timeline</span>
-                          </a>
-                        </li>
-                      </ul>
                     </li>
                     <li >
                       <a href="#pages"  >

@@ -22,9 +22,10 @@ class App extends CI_Controller {
 
 		$data = array(
 				'title'			=> $title,
-				'first_name'	=> $userdata['first_name']
+				'first_name'	=> $userdata['first_name'],
+				'nav_item'		=> 'dashboard'
 			);
-		$this->load->view('user/templates/header');
+		$this->load->view('user/templates/header', $data);
 		$this->load->view('user/dashboard', $data);
 		// if not logged in, then redirect to homepage
 
@@ -40,9 +41,13 @@ class App extends CI_Controller {
 		$this->load->model('list_model');
 		$listdata = $this->list_model->getAllLists($this->userid);
 
-		$data = array('lists' => $listdata);
+		$data = array(
+			'title'			=>	'All Your Lists',
+			'lists' 		=>	$listdata,
+			'nav_item'		=>	'lists'
+			);
 
-		$this->load->view('user/templates/header');
+		$this->load->view('user/templates/header', $data);
 		$this->load->view('user/lists', $data);
 	}
 
