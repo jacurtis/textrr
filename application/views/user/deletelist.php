@@ -20,7 +20,7 @@
                     <h3>Delete <strong class="green-title"><?= $list['list_name'] ?></strong>?</h3>
                     <h4>There is no way to recover a deleted list. If you are sure that you want to delete the list please confirm below. Otherwise you may select the red 'Cancel' button below to go back</h4>
                     <hr>
-                    <form role="form" action="/lists/delete/<?= $list['id'] ?>" method="POST">
+                    <form role="form" action="/list/delete/<?= $list['id'] ?>" method="POST">
                       <div class="form-group">
                         <label for="deletelist">Confirm Deletion</label>
                         <input type="text" class="form-control" name="deletelist" id="deletelist" placeholder="Type DELETE in all CAPS to confirm">

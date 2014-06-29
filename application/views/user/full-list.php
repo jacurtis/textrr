@@ -29,7 +29,7 @@
             </select>
             <button class="btn btn-sm btn-default">Apply</button>                
           </div>
-          <div class="col-sm-4 m-b-xs">
+          <!-- <div class="col-sm-4 m-b-xs">
             <div class="btn-group" data-toggle="buttons">
               <label class="btn btn-sm btn-default active">
                 <input type="radio" name="options" id="option1"> Day
@@ -41,8 +41,8 @@
                 <input type="radio" name="options" id="option2"> Month
               </label>
             </div>
-          </div>
-          <div class="col-sm-3">
+          </div> -->
+          <div class="col-sm-3 col-sm-offset-4">
             <div class="input-group">
               <input type="text" class="input-sm form-control" placeholder="Search">
               <span class="input-group-btn">
@@ -65,22 +65,22 @@
                 </th>
                 <th width="30%">Name</th>
                 <th width="20%">Date Added</th>
-                <th width="30"></th>
+                <!-- <th width="30"></th> -->
               </tr>
             </thead>
             <tbody>
             <?php foreach ($numbers as $number) { 
               $time = strtotime($number['date_added']);
-              $pretty_time = date("m/d/y g:ia", $time);
+              $pretty_time = date("m/d/y  @  g:ia", $time);
             ?>
               <tr>
                 <td><input type="checkbox" name="post[]" value="2"></td>
                 <td><?= $number['phone_number'] ?></td>
                 <td><?= $number['first_name']." ".$number['last_name'] ?></td>
                 <td><?= $pretty_time ?></td>
-                <td>
+                <!-- <td>
                   <a href="#" class="active" data-toggle="class"><i class="fa fa-check text-success text-active"></i><i class="fa fa-times text-danger text"></i></a>
-                </td>
+                </td> -->
               </tr>
               <?php } ?>
             </tbody>

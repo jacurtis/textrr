@@ -44,9 +44,9 @@ $route['signin'] = "user/signin";
 $route['logout'] = "user/logout";
 $route['signup'] = "user/signup";
 $route['lists'] = "app/lists";
-$route['lists/create'] = "app/createNewList";
-$route['lists/delete/(:num)'] = "app/deletelist/$1";
-$route['lists/(:num)'] = "app/fullList/$1";
+$route['list/create'] = "app/createNewList";
+$route['list/delete/(:num)'] = "app/deletelist/$1";
+$route['list/(:num)'] = "app/fullList/$1";
 $route['404_override'] = 'error/my404';
 $route['default_controller'] = "welcome";
 

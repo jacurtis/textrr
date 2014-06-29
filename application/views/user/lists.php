@@ -7,7 +7,7 @@
                     <h1>Lists</h1>
                   </div>
                   <div class="col-sm-4 adjust-btn-top-flush">
-                    <a class="btn btn-success btn-lrg pull-right" href="/lists/create">Create New List</a>
+                    <a class="btn btn-success btn-lrg pull-right" href="/list/create">Create New List</a>
                   </div>
                 </div>
                 <div class="row">
@@ -23,7 +23,7 @@
                 ?>
                 <div class="row list-item">
                   <div class="col-md-6">
-                    <h3 class="green-title"><a href="#"><?= $list['list_name'] ?></a></h3>
+                    <h3 class="green-title"><a href="/list/<?= $list['id'] ?>"><?= $list['list_name'] ?></a></h3>
                     <?php $timestamp = strtotime($list['list_created']); ?>
                     <p class="hidden-xs hidden-sm">Created on <?= date("F jS, Y", $timestamp) ?></p>
                   </div>
@@ -39,11 +39,11 @@
                           Actions <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu more-dropdown-menu">
-                          <li><a href="#">View Full List</a></li>
+                          <li><a href="/list/<?= $list['id'] ?>">View Full List</a></li>
                           <li><a href="#">Add New Number</a></li>
                           <li><a href="#">Create Campaign</a></li>
                           <li class="divider"></li>
-                          <li><a href="/lists/delete/<?= $list['id'] ?>">Delete this list</a></li>
+                          <li><a href="/list/delete/<?= $list['id'] ?>">Delete this list</a></li>
                         </ul>
                       </div>
                       <p class="number-label hidden-xs hidden-sm"><span class="label bg-success"><?= friendlyUSAFormat($list['list_phonenumber']) ?></span></p>
