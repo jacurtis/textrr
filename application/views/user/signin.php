@@ -9,7 +9,8 @@
   <link rel="stylesheet" href="<?= css_url('animate.css') ?>" type="text/css" />
   <link rel="stylesheet" href="<?= css_url('font-awesome.min.css') ?>" type="text/css" />
   <link rel="stylesheet" href="<?= css_url('font.css') ?>" type="text/css" />
-    <link rel="stylesheet" href="<?= css_url('app.css') ?>" type="text/css" />
+  <link rel="stylesheet" href="<?= css_url('app.css') ?>" type="text/css" />
+  <link rel="stylesheet" href="<?= css_url('custom.css') ?>" type="text/css" />
   <!--[if lt IE 9]>
     <script src="<?= js_url('ie/html5shiv.js') ?>"></script>
     <script src="<?= js_url('ie/respond.min.js') ?>"></script>
@@ -19,7 +20,7 @@
 <body class="">
   <section id="content" class="m-t-lg wrapper-md animated fadeInUp">    
     <div class="container aside-xxl">
-      <a class="navbar-brand block" href="/">Textrr</a>
+      <a class="navbar-brand block white-text" href="/">Textrr</a>
       <section class="panel panel-default bg-white m-t-lg">
         <header class="panel-heading text-center">
           <strong>Sign in</strong>
@@ -27,7 +28,7 @@
         <form action="/login" method="POST" class="panel-body wrapper-lg">
           <div class="form-group">
             <label class="control-label" for="input-email">Email</label>
-            <input type="email" placeholder="test@example.com" class="form-control input-lg" name="input-email" id="input-email">
+            <input type="email" placeholder="name@example.com" class="form-control input-lg" name="input-email" id="input-email">
           </div>
           <div class="form-group">
             <label class="control-label" for="input-password">Password</label>
@@ -54,7 +55,7 @@
   <footer id="footer">
     <div class="text-center padder">
       <p>
-        <small>The Mailchimp of Text Message Marketing<br>&copy; 2014</small>
+        <small class="white-text">The Mailchimp of Text Message Marketing<br>&copy; 2014</small>
       </p>
     </div>
   </footer>

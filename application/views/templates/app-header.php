@@ -197,48 +197,16 @@
                       </a>
                     </li>
                     <li >
-                      <a href="#layout"  >
+                      <a href="/campaigns"  >
                         <i class="fa fa-columns icon">
                           <b class="bg-warning"></b>
                         </i>
-                        <span class="pull-right">
+                        <!-- <span class="pull-right">
                           <i class="fa fa-angle-down text"></i>
                           <i class="fa fa-angle-up text-active"></i>
-                        </span>
+                        </span> -->
                         <span>Campaigns</span>
                       </a>
-                      <ul class="nav lt">
-                        <li >
-                          <a href="layout-c.html" >                                                        
-                            <i class="fa fa-angle-right"></i>
-                            <span>Color option</span>
-                          </a>
-                        </li>
-                        <li >
-                          <a href="layout-r.html" >                                                        
-                            <i class="fa fa-angle-right"></i>
-                            <span>Right nav</span>
-                          </a>
-                        </li>
-                        <li >
-                          <a href="layout-h.html" >                                                        
-                            <i class="fa fa-angle-right"></i>
-                            <span>Hbox Layout</span>
-                          </a>
-                        </li>
-                        <li >
-                          <a href="layout-boxed.html" >                                                        
-                            <i class="fa fa-angle-right"></i>
-                            <span>Boxed Layout</span>
-                          </a>
-                        </li>
-                        <li >
-                          <a href="layout-fluid.html" >                                                        
-                            <i class="fa fa-angle-right"></i>
-                            <span>Fluid Layout</span>
-                          </a>
-                        </li>
-                      </ul>
                     </li>
                     <li <?= ($nav_item == "lists" ? 'class="active"' :'') ?> >
                       <a href="/lists"  >

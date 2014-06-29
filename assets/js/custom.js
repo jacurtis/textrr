@@ -22,7 +22,7 @@ $( document ).ready(function() {
     		};
     	} else {
     		console.log('check the box first');
-    		var errorMsg = '<div class="alert alert-danger" <button type="button" class="close" data-dismiss="alert">×</button><i class="fa fa-ban-circle"></i><strong>Error: </strong>Please acknowledge that permission has been given to add this user to your list</div>';
+    		var errorMsg = '<div class="alert alert-danger" <button type="button" class="close" data-dismiss="alert">&times;</button><i class="fa fa-ban-circle"></i><strong>Error: </strong>Please acknowledge that permission has been given to add this user to your list</div>';
     		$(".message-area").html(errorMsg);
     		return false;
     	};
@@ -52,5 +52,10 @@ $( document ).ready(function() {
             }
         });
     });
+
+
+    $('#input-password').hideShowPassword(false, true);
+
+
     
 });

@@ -48,6 +48,7 @@ $route['list/create'] = "list_controller/create";
 $route['list/delete/(:num)'] = "list_controller/delete/$1";
 $route['list/(:num)'] = "list_controller/view/$1";
 $route['list/add/(:num)'] = "list_controller/add/$1";
+$route['campaigns'] = "campaign";
 $route['404_override'] = 'error/my404';
 $route['default_controller'] = "welcome";
 
