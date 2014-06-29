@@ -30,6 +30,18 @@ class List_model extends CI_Model {
 		return $query->result_array();
 	}
 
+	function getAllNumbersForList($listid, $perpage = 20, $offset = 0, $sort = "desc")
+	{
+		$data = array('lists_id' => $listid);
+
+		$this->db->where('lists_id', $listid);
+		$this->db->order_by('date_added', $sort);
+		$this->db->limit($perpage, $offset);
+		$query = $this->db->get('lists_numbers');
+
+		return $query->result_array();
+	}
+
 	function deleteList($listid)
 	{
 		$data = array('id' => $listid);

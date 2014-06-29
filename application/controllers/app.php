@@ -107,6 +107,44 @@ class App extends CI_Controller {
 		$this->load->view('user/templates/footer');
 	}
 
+	public function fullList($listid)
+	{
+		if ($listid == 0) {
+			redirect('/lists');
+		}
+
+		$this->load->model('list_model');
+		$listdata = $this->list_model->getListData($listid);
+
+		if ($listdata['users_id'] != $this->userid) {
+			redirect('/lists');
+		}
+
+		$perpage = $this->input->get('perpage');
+		$offset = $this->input->get('offset');
+		$sort = $this->input->get('sort');
+		$lists_numbers = null;
+
+		if (!empty($perpage) && !empty($offset) && !empty($sort)) {
+			$lists_numbers = $this->list_model->getAllNumbersForList($listid, $perpage, $offset, $sort);
+		} else {
+			$lists_numbers = $this->list_model->getAllNumbersForList($listid);
+		}
+		
+
+		$title = $listdata['list_name'] . ' Full Details';
+		$data = array(
+				'title' 	=>	$title,
+				'nav_item'	=>	'lists',
+				'numbers'	=>	$lists_numbers,
+				'list'		=>	$listdata
+			);
+
+		$this->load->view('user/templates/header', $data);
+		$this->load->view('user/full-list', $data);
+		$this->load->view('user/templates/footer');
+	}
+
 	public function analytics()
 	{
 		
