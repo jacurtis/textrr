@@ -124,4 +124,44 @@ class List_controller extends CI_Controller
 		$this->load->view('templates/app-footer');
 	}
 
+	public function add($listid = 0)
+	{
+		if ($listid == 0) {
+			redirect('/lists');
+		}
+
+		$this->load->model('list_model');
+		$listdata = $this->list_model->getListData($listid);
+
+		if ($listdata == FALSE || $listdata['users_id'] != $this->userid) {
+			redirect('/lists');
+		}
+
+		// see if a number was submitted
+		if ($this->input->post('addNumber') != FALSE) {
+			$data['lists_id'] = $listid;
+			$data['phone_number'] = preparePhoneNumberForDB($this->input->post('addNumber'));
+			if (!empty($_POST['first_name'])) {
+				$data['first_name'] = $this->input->post('first_name');
+			}
+			if (!empty($_POST['last_name'])) {
+				$data['last_name'] = $this->input->post('last_name');
+			}
+
+			if ($this->list_model->addNumberToList($data) != FALSE) {
+				redirect('/list/'.$listid);
+			}
+		}
+
+		// otherwise show a form to add a number
+		$data = array(
+				'title' 	=> 	'Add New Phone Number',
+				'nav_item'	=>	'lists',
+				'list'		=> 	$listdata
+			);
+		$this->load->view('templates/app-header', $data);
+		$this->load->view('list/addnumber', $data);
+		$this->load->view('templates/app-footer');
+	}
+
 }

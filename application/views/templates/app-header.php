@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="<?=css_url('animate.css')?>" type="text/css" />
   <link rel="stylesheet" href="<?=css_url('font-awesome.min.css')?>" type="text/css" />
   <link rel="stylesheet" href="<?=css_url('font.css')?>" type="text/css" />
+  <link rel="stylesheet" href="<?=js_url('fuelux/fuelux.css')?>" type="text/css" />
   <link rel="stylesheet" href="<?=js_url('calendar/bootstrap_calendar.css')?>" type="text/css" />
   <link rel="stylesheet" href="<?=js_url('jvectormap/jquery-jvectormap-1.2.2.css')?>" type="text/css" />
   <link rel="stylesheet" href="<?=css_url('app.css')?>" type="text/css" />

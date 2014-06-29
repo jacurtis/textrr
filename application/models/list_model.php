@@ -21,7 +21,12 @@ class List_model extends CI_Model {
 				'list_name'			=>	$listname,
 				'list_phonenumber'	=>	$phone
 			);
-		$this->db->insert('lists', $data);
+		return $this->db->insert('lists', $data);
+	}
+
+	function addNumberToList($data)
+	{
+		return $this->db->insert('lists_numbers', $data);
 	}
 
 	function getAllLists($userid) {

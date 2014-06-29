@@ -6,6 +6,9 @@
           <div class="col-sm-8">
             <h1><?= $list['list_name'] ?></h1>
           </div>
+          <div class="col-sm-4 adjust-btn-top-flush">
+            <a class="btn btn-success btn-lrg pull-right" href="/list/add/<?= $list['id'] ?>">Add New Subscriber</a>
+          </div>
         </div>
         <div class="row">
           <div class="col-xs-12">
@@ -75,7 +78,7 @@
             ?>
               <tr>
                 <td><input type="checkbox" name="post[]" value="2"></td>
-                <td><?= $number['phone_number'] ?></td>
+                <td><?= friendlyUSAFormat($number['phone_number']) ?></td>
                 <td><?= $number['first_name']." ".$number['last_name'] ?></td>
                 <td><?= $pretty_time ?></td>
                 <!-- <td>

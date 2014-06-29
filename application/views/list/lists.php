@@ -40,7 +40,7 @@
                         </button>
                         <ul class="dropdown-menu more-dropdown-menu">
                           <li><a href="/list/<?= $list['id'] ?>">View Full List</a></li>
-                          <li><a href="#">Add New Number</a></li>
+                          <li><a href="/list/add/<?= $list['id'] ?>">Add New Number</a></li>
                           <li><a href="#">Create Campaign</a></li>
                           <li class="divider"></li>
                           <li><a href="/list/delete/<?= $list['id'] ?>">Delete this list</a></li>

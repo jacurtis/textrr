@@ -40,14 +40,14 @@ class User extends CI_Controller {
 					// if successful, we want to load the new dashboard with the new user's information
 					redirect('/dashboard', 'location', 301);
 				} else {
-					$this->load->view('signup');
+					$this->load->view('user/signup');
 				}
 				
 			} else { // now if the form didnt validation, redisplay errors
-				$this->load->view('signup');
+				$this->load->view('user/signup');
 			}
 		} else { // no the form is not freshly submitted
-			$this->load->view('signup');
+			$this->load->view('user/signup');
 		}
 	}
 
@@ -61,10 +61,10 @@ class User extends CI_Controller {
 			if($this->authex->login($this->input->post('input-email'), $this->input->post('input-password'))) {
 				redirect("/dashboard");
 			} else {
-				$this->load->view('signin');
+				$this->load->view('user/signin');
 			}
 		} else {
-			$this->load->view('signin');
+			$this->load->view('user/signin');
 		}
 	}
 
