@@ -3,8 +3,8 @@
     <section class="scrollable wrapper">
       <div class="top-area">
         <div class="row">
-          <div class="col-sm-8">
-            <h1>Add New Phone Number</h1>
+          <div class="col-sm-12">
+            <h1>Add New Subscriber</h1>
           </div>
         </div>
         <div class="row">
@@ -47,14 +47,14 @@
                   <div class="checkbox">
                     <label class="checkbox-custom">
                       <input type="checkbox" name="phone-number-consent" id="phone-number-consent">
-                      <i class="fa fa-fw fa-square-o"></i> I have permission to add this number to my list
+                      <i class="fa fa-fw fa-square-o"></i> I have permission to add this subscriber to my list
                     </label>
                   </div>
                 </div>
               </div>
               <hr>
               <button type="submit" class="btn btn-sm btn-success pull-right">
-                Add Number&nbsp;&nbsp;
+                Add Subscriber&nbsp;&nbsp;
                 <i class="fa fa-plus-circle"></i>
               </button>
               <a href="/lists" class="btn btn-sm btn-danger">Cancel</a>

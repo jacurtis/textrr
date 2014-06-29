@@ -26,7 +26,13 @@ class List_model extends CI_Model {
 
 	function addNumberToList($data)
 	{
-		return $this->db->insert('lists_numbers', $data);
+		$success = $this->db->insert('lists_numbers', $data);
+		$this->db->where('lists_id', $data['lists_id']);
+		$this->db->from('lists_numbers');
+		$data2['list_count'] = $this->db->count_all_results();
+		$this->db->where('id', $data['lists_id']);
+		$this->db->update('lists', $data2);
+		return $success;
 	}
 
 	function getAllLists($userid) {
