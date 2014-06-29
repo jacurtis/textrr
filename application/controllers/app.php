@@ -9,7 +9,7 @@ class App extends CI_Controller {
         if ($this->authex->logged_in() == FALSE) {
         	redirect('/');
         } else {
-					$this->userid = $this->session->userdata("user_id");
+			$this->userid = $this->session->userdata("user_id");
         }
     }
 

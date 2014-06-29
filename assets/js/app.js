@@ -203,7 +203,7 @@ Date.now = Date.now || function() { return +new Date; };
       return true;
   	};
   	// unmobile
-  	$window.width() < 768 && mobile();
+  	$window.width() <= 768 && mobile();
     // resize
     var $resize;
   	$window.resize(function() {
