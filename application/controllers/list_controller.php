@@ -99,6 +99,18 @@ class List_controller extends CI_Controller
 			redirect('/lists');
 		}
 
+		if ($this->input->post('ids') != FALSE && $this->input->post('desiredAction') != FALSE && $this->input->post('desiredAction') != "0") {
+			// bulk action was just submitted
+			if ($this->input->post('desiredAction') == "1") {
+				# Delete Action
+
+			} elseif ($this->input->post('desiredAction') == "2") {
+				# Bulk Edit Action
+			} elseif ($this->input->post('desiredAction') == "3") {
+				# Export Action
+			}
+		}
+
 		$perpage = $this->input->get('perpage');
 		$offset = $this->input->get('offset');
 		$sort = $this->input->get('sort');
@@ -162,6 +174,37 @@ class List_controller extends CI_Controller
 		$this->load->view('templates/app-header', $data);
 		$this->load->view('list/addnumber', $data);
 		$this->load->view('templates/app-footer');
+	}
+
+	public function ajaxBulkAction($listid)
+	{
+
+		if ($listid == 0) {
+			return "0";
+		}
+
+		$this->load->model('list_model');
+		$listdata = $this->list_model->getListData($listid);
+
+		if ($listdata == FALSE || $listdata['users_id'] != $this->userid) {
+			return "0";
+		}
+
+		if ($this->input->post('ids') != FALSE && $this->input->post('desiredAction') != FALSE && $this->input->post('desiredAction') != "0") {
+			// bulk action was just submitted
+			if ($this->input->post('desiredAction') == "1") {
+				# Delete Action
+				$success = $this->list_model->deleteNumbers($this->input->post('ids'));
+				print_r($success);
+				return;
+			} elseif ($this->input->post('desiredAction') == "2") {
+				# Bulk Edit Action
+			} elseif ($this->input->post('desiredAction') == "3") {
+				# Export Action
+			}
+		} else {
+			return "0";
+		}
 	}
 
 }

@@ -24,13 +24,13 @@
         </header>
         <div class="row wrapper">
           <div class="col-sm-5 m-b-xs">
-            <select class="input-sm form-control input-s-sm inline v-middle">
+            <select class="input-sm form-control input-s-sm inline v-middle bulk-action">
               <option value="0">Bulk action</option>
               <option value="1">Delete selected</option>
               <option value="2">Bulk edit</option>
               <option value="3">Export</option>
             </select>
-            <button class="btn btn-sm btn-default">Apply</button>                
+            <button class="btn btn-sm btn-default" id="applyActions">Apply</button>                
           </div>
           <!-- <div class="col-sm-4 m-b-xs">
             <div class="btn-group" data-toggle="buttons">
@@ -54,7 +54,7 @@
             </div>
           </div>
         </div>
-        <div class="table-responsive">
+        <div class="table-responsive"><input type="hidden" id="list-id-reference" value="<?= $list['id'] ?>">
           <table class="table table-striped b-t b-light">
             <thead>
               <tr>
@@ -77,7 +77,7 @@
               $pretty_time = date("m/d/y  @  g:ia", $time);
             ?>
               <tr>
-                <td><input type="checkbox" name="post[]" value="2"></td>
+                <td><input type="checkbox" name="actioncheckbox" value="<?= $number['id'] ?>"></td>
                 <td><?= friendlyUSAFormat($number['phone_number']) ?></td>
                 <td><?= $number['first_name']." ".$number['last_name'] ?></td>
                 <td><?= $pretty_time ?></td>
@@ -92,13 +92,13 @@
         <footer class="panel-footer">
           <div class="row">
             <div class="col-sm-4 hidden-xs">
-              <select class="input-sm form-control input-s-sm inline v-middle">
+              <select class="input-sm form-control input-s-sm inline v-middle bulk-action">
                 <option value="0">Bulk action</option>
                 <option value="1">Delete selected</option>
                 <option value="2">Bulk edit</option>
                 <option value="3">Export</option>
               </select>
-              <button class="btn btn-sm btn-default">Apply</button>                  
+              <button class="btn btn-sm btn-default" id="applyActions">Apply</button>                  
             </div>
             <div class="col-sm-4 text-center">
               <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small>

@@ -27,5 +27,30 @@ $( document ).ready(function() {
     		return false;
     	};
     });
+
+
+    $('#applyActions').click(function() {
+        // console.log('clicked actions');
+        var checkValues = $('input[name=actioncheckbox]:checked').map(function() {
+            return $(this).val();
+        }).get();
+        // console.log(checkValues);
+        $.ajax({
+            url: '/list_controller/ajaxBulkAction/'+$('#list-id-reference').val(),
+            type: 'post',
+            data: {
+                ids: checkValues,
+                desiredAction: $('.bulk-action').val()
+            },
+            success:function(data) {
+                // refresh
+                if (data == "0") {
+                    // error
+                } else {
+                    location.reload();
+                };
+            }
+        });
+    });
     
 });

@@ -58,4 +58,15 @@ class List_model extends CI_Model {
 		$data = array('id' => $listid);
 		return $this->db->delete('lists', $data);
 	}
+
+	function deleteNumbers($data)
+	{
+		$this->db->where('id', $data[0]);
+		if (count($data) > 1) {
+			for ($i=1; $i < count($data); $i++) { 
+				$this->db->or_where('id', $data[$i]);
+			}
+		}
+		return $this->db->delete('lists_numbers');
+	}
 }
