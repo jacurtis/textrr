@@ -26,9 +26,9 @@
           <div class="col-sm-5 m-b-xs">
             <select class="input-sm form-control input-s-sm inline v-middle bulk-action">
               <option value="0">Bulk action</option>
-              <option value="1">Delete selected</option>
-              <option value="2">Bulk edit</option>
-              <option value="3">Export</option>
+              <option value="1">Delete Selected</option>
+              <option value="2">Export Selected (Coming Soon!)</option>
+              <option value="3">Export All (Coming Soon!)</option>
             </select>
             <button class="btn btn-sm btn-default" id="applyActions">Apply</button>                
           </div>
@@ -95,8 +95,8 @@
               <select class="input-sm form-control input-s-sm inline v-middle bulk-action">
                 <option value="0">Bulk action</option>
                 <option value="1">Delete selected</option>
-                <option value="2">Bulk edit</option>
-                <option value="3">Export</option>
+                <option value="2">Export Selected (Coming Soon!)</option>
+                <option value="3">Export All (Coming Soon!)</option>
               </select>
               <button class="btn btn-sm btn-default" id="applyActions">Apply</button>                  
             </div>
