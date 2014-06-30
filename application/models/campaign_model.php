@@ -9,7 +9,9 @@ class Campaign_model extends CI_Model {
 
 	function getAll($userid) {
 		$data = array('users_id' => $userid);
-		$query = $this->db->get_where('campaigns', $data);
+		$this->db->where('users_id', $userid);
+		$this->db->order_by('camp_sent', "desc");
+		$query = $this->db->get('campaigns');
 		return $query->result_array();
 	}
 

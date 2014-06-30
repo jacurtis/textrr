@@ -15,7 +15,6 @@
             <hr>
           </div>
         </div>
-
         <!-- 
         The rows of lists -->
         <?php
@@ -24,8 +23,12 @@
         <div class="row list-item">
           <div class="col-md-4">
             <h3 class="green-title"><a href="/campaign/<?= $campaign['id'] ?>"><?= $campaign['camp_title'] ?></a></h3>
-            <?php $timestamp = strtotime($campaign['camp_sent']); ?>
-            <p class="hidden-xs hidden-sm">Sent on <?= date("F jS, Y @ g:ia", $timestamp) ?></p>
+            <?php $timestamp = strtotime($campaign['camp_sent']);
+            if ($timestamp < 2114380799) {
+      ?>        <p class="hidden-xs hidden-sm">Sent on <?= date("F jS, Y @ g:ia", $timestamp) ?></p>
+<?php       } else { ?>
+                <p class="hidden-xs hidden-sm">Not sent yet</p>
+<?php       } ?>
           </div>
           <div class="col-md-2 col-xs-6">
             <h3 class="subscriber-number"><strong><?= $campaign['r_count'] ?></strong></h3>
@@ -47,9 +50,12 @@
                   <li><a href="/campaign/<?= $campaign['id'] ?>">View Full Details</a></li>
                   <li><a href="#">Stats (coming soon)</a></li>
                   <li><a href="#">Duplicate Campaign</a></li>
+                <?php if ($timestamp == 2114380799) { ?>
+                  <li class="divider"></li>
+                  <li><a href="#">Send Campaign Now</a></li> <?php
+                } ?>
                 </ul>
               </div>
-              
             </div>
           </div>
         </div>
