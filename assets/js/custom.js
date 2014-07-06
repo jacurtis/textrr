@@ -53,9 +53,33 @@ $( document ).ready(function() {
         });
     });
 
-
     $('#input-password').hideShowPassword(false, true);
+    $('.parsley-validate').parsley();
 
+    $('#form-campaign-message').keyup(function() {
+        var fieldVal = $(this).val();
+        var fieldLength = fieldVal.length;
+        var charCountDiv = $('.char-count');
+        $('.char-count span').html(fieldLength.toString());
+        
+        if (fieldLength < 20) {
+            $(charCountDiv).css("color", "#717171");
+            $(charCountDiv).css("font-weight", "normal");
+        } else if (fieldLength < 120) {
+            $(charCountDiv).css("color", "#8ec165");
+            $(charCountDiv).css("font-weight", "normal");
+        } else if (fieldLength <= 160) {
+            $(charCountDiv).css("color", "#B8C000");
+            $(charCountDiv).css("font-weight", "normal");
+        } else {
+            $(charCountDiv).css("color", "red");
+            $(charCountDiv).css("font-weight", "bold");
+        };
+    });
 
-    
+    // $('#btn-create-campaign').click(function() {
+    //     $(this).parsley('validate');
+    //     return false;
+    // })
+
 });

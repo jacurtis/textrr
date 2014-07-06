@@ -15,5 +15,7 @@ class Campaign_model extends CI_Model {
 		return $query->result_array();
 	}
 
-
+	function createCampaign($data) {
+		return $this->db->insert('campaigns', $data);
+	}
 }

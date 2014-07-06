@@ -114,16 +114,16 @@
 	});
 
 	// wizard
-  $(document).on('change', '.wizard', function (e, data) {
-    if(data.direction !== 'next' ) return;
-    var item = $(this).wizard('selectedItem');
-    var $step = $(this).find('.step-pane:eq(' + (item.step-1) + ')');
-    var validated = true;
-    $('[data-required="true"]', $step).each(function(){
-      return (validated = $(this).parsley( 'validate' ));
-    });
-    if(!validated) return e.preventDefault();
-  });
+	$(document).on('change', '.wizard', function (e, data) {
+		if(data.direction !== 'next' ) return;
+		var item = $(this).wizard('selectedItem');
+		var $step = $(this).find('.step-pane:eq(' + (item.step-1) + ')');
+		var validated = true;
+		$('[data-required="true"]', $step).each(function(){
+		  return (validated = $(this).parsley( 'validate' ));
+		});
+		if(!validated) return e.preventDefault();
+	});
 
 	// sortable
 	if ($.fn.sortable) {
