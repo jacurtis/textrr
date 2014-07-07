@@ -4,7 +4,7 @@
       <div class="top-area">
         <div class="row">
           <div class="col-sm-8">
-            <h1><?= $campaign['camp_title'] ?></h1>
+            <h1><?= $campaign['camp_title'] . " id = " . $campaign['users_id'] . "/ " . $userid ?></h1>
           </div>
           <?php if ($campaign['camp_was_sent'] == 0) {?>
           <div class="col-sm-4 adjust-btn-top-flush">

@@ -63,10 +63,15 @@ class Campaign extends CI_Controller {
 	{
 		$this->load->model('campaign_model');
 		$campaign = $this->campaign_model->getCampaignWithList($id);
+		if ($campaign == FALSE || intval($campaign['users_id']) != $this->userid) {
+			redirect('/campaigns');
+		}
+
 		$data = array(
 				'title'		=>	$campaign['camp_title'].'Full Details',
 				'nav_item'	=>	'campaigns',
-				'campaign'	=>	$campaign
+				'campaign'	=>	$campaign,
+				'userid'	=> $this->userid
 			);
 
 		$this->load->view('templates/app-header', $data);
