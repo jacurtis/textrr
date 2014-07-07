@@ -44,6 +44,18 @@ textarea.text-msg-preview {
 	resize: none;
 }
 
+#campaign-delete-btn {
+	margin-right: 5px;
+}
+
+#campaign-edit-btn {
+	margin: 0px 5px;
+}
+
+.no-space-right {
+	margin-right: 0px !important;
+}
+
 
 @media(max-width:767px){
 	

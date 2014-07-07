@@ -58,4 +58,19 @@ class Campaign extends CI_Controller {
 		$this->load->view('campaign/create', $data);
 		$this->load->view('templates/app-footer');
 	}
+
+	public function view($id)
+	{
+		$this->load->model('campaign_model');
+		$campaign = $this->campaign_model->getCampaignWithList($id);
+		$data = array(
+				'title'		=>	$campaign['camp_title'].'Full Details',
+				'nav_item'	=>	'campaigns',
+				'campaign'	=>	$campaign
+			);
+
+		$this->load->view('templates/app-header', $data);
+		$this->load->view('campaign/view', $data);
+		$this->load->view('templates/app-footer');
+	}
 }
